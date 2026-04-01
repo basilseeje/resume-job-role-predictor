@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Role Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #4facfe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #007bff;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Job Role Prediction</h1>
+
+        <form action="/predict" method="post">
+            <input type="text" name="skills" placeholder="Enter your skills..." required>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+
+</body>
+</html>
